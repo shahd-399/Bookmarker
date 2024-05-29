@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarker...</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+    <div class="bookMark position-relative">
+        <div class="layout w-100 h-100 position-absolute d-none" id="layout"></div>
+        <div class="container text-center py-5">
+            <h1 class="position-relative mb-5">Bookmarker</h1>
+            <div class="bookmark-form py-3 my-4">
+                <h2 class="mb-2">
+                    <i class="fa-solid fa-bookmark"></i>
+                    Bookmark your favorite sites
+                    <i class="fa-solid fa-bookmark"></i>
+                </h2>
+                <form action="" class="text-start my-2 py-1">
+                    <div class="my-4 px-3">
+                        <label for="SiteName" class="form-label fw-bold">
+                            <i class="fa-solid fa-book-bookmark me-2"></i>
+                            Site Name</label>
+                        <input type="text" class="form-control" id="SiteName" placeholder="Bookmark Name" oninput="validInputName()">
+                    </div>
+                    <div class="my-4 px-3">
+                        <label for="SiteURL" class="form-label fw-bold">
+                            <i class="fa-solid fa-link me-2"></i>
+                            Site URL</label>
+                        <input type="text" class="form-control" id="SiteURL" placeholder="Website URL" oninput="isValidUrl()">
+                    </div>
+                    <button type="button" class="btn px-5 mx-auto d-block" id="SubmitBtn">Submit</button>
+                </form>
+            </div>
+    
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Index</th>
+                        <th scope="col">Website Name</th>
+                        <th scope="col">Visit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+
+            <div class="message bg-white p-4 rounded-1 text-start position-absolute start-50 top-50 translate-middle d-none" id="message">
+                <div class="bar d-flex align-items-center justify-content-between mb-2">
+                    <div class="icons">
+                        <i class="fa-solid fa-circle text-danger"></i>
+                        <i class="fa-solid fa-circle text-warning"></i>
+                        <i class="fa-solid fa-circle text-success"></i>
+                    </div>
+                    <button class="border-0"><i class="fa-solid fa-xmark fa-2x" id="close"></i></button>
+                </div>
+                <h3 class="mb-4">Site Name or Url is not valid, Please follow the rules below :</h3>
+                <p class="d-flex align-items-center mb-3"><i class="fa-solid fa-arrow-right rounded-circle d-flex align-items-center justify-content-center me-2"></i>
+                <span>Site name must contain at least 3 characters</span></p>
+                <p class="d-flex align-items-center"><i class="fa-solid fa-arrow-right rounded-circle d-flex align-items-center justify-content-center me-2"></i>
+                <span>Site URL must be a valid one</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
